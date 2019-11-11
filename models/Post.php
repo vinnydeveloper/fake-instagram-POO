@@ -14,7 +14,7 @@ class Post extends Conexao {
 
     public function listarPosts(){
         $db = parent::criarConexao();
-        $query = $db->query('SELECT * FROM posts');
+        $query = $db->query('SELECT * FROM posts ORDER BY id DESC');
         $resultado = $query->fetchAll(PDO::FETCH_OBJ);
         return $resultado;
     }
